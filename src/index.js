@@ -2,11 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
+import { ValueProvider } from './context/valueContext';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ValueProvider>
+      <App />
+    </ValueProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
