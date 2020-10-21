@@ -3,11 +3,12 @@ import React, { useContext } from 'react';
 import Todo from './Todo';
 import { ValueContext } from '../../context/valueContext';
 import styled from 'styled-components';
+import { Note } from '../Reusable/note';
 
 const TodoList = () => {
   const appProvider = useContext(ValueContext);
   const { todos, toggleComplete, removeTodo } = appProvider;
-  return (
+  return todos.length ? (
     <TodoWrapper>
       {todos.map((todo) => (
         <Todo
@@ -18,18 +19,29 @@ const TodoList = () => {
         />
       ))}
     </TodoWrapper>
+  ) : (
+    <EmptyIllustration>{/* <Note /> */}</EmptyIllustration>
   );
 };
 
 export default TodoList;
 
 const TodoWrapper = styled.div`
-  margin-top: 4rem;
+  margin: 4rem 0;
   height: min-content;
-  padding: 2rem 0;
+  padding: 2rem 3.6rem;
   border-radius: 2.2rem;
-  border: 0.5px solid #5e6387;
-  background: rgb(250, 250, 250, 20%);
+
+  background: rgb(0, 0, 0, 30%);
   filter: blur(40);
-  box-shadow: 0 2rem 4rem rgb(0, 0, 0, 35%);
+  box-shadow: 0px 20px 40px rgba(33, 62, 124, 0.35),
+    0px 20px 40px rgba(33, 62, 124, 0.25);
+`;
+
+const EmptyIllustration = styled.div`
+  margin-top: 4rem;
+`;
+
+const Img = styled.img`
+  width: 100%;
 `;

@@ -18,7 +18,7 @@ const ValueProvider = (props) => {
   }, [todos]);
 
   const addTodo = (todo) => {
-    setTodos([todo, ...todos]);
+    setTodos([...todos, todo]);
   };
 
   const toggleComplete = (id) => {

@@ -6,6 +6,7 @@ import TodoList from './components/Todos/TodoList';
 import ProgressBar from './components/Progress/Progress';
 
 import { ValueContext } from './context/valueContext';
+import Navbar from './components/Navigation/Navigation';
 
 export default function App() {
   const valueInfo = useContext(ValueContext);
@@ -13,7 +14,8 @@ export default function App() {
 
   return (
     <MainWrapper>
-      <ContentWrapper>
+      <Navbar />
+      <Main>
         <Note>
           <TodoForm addTodo={addTodo} />
           <TodoList />
@@ -21,29 +23,29 @@ export default function App() {
         <Progress>
           <ProgressBar />
         </Progress>
-      </ContentWrapper>
+      </Main>
     </MainWrapper>
   );
 }
 
 const MainWrapper = styled.div`
   position: relative;
-  height: 100vh;
-  background: linear-gradient(67.47deg, #251551 -1.24%, #3c0404 104.43%);
+  min-height: 100vh;
+  background:  linear-gradient(47.03deg, #76E7E7 -3.73%, #6B16DB 93.84%);
+  );
 `;
-const ContentWrapper = styled.div`
-  max-width: 120rem;
-  padding: 3rem 2rem;
+const Main = styled.main`
+  max-width: 1234px;
+  padding: 0 2rem;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
 `;
 
-const Note = styled.div`
+const Note = styled.section`
   position: relative;
-  padding: 0 4rem;
 `;
-const Progress = styled.div`
+const Progress = styled.section`
   height: 500px;
 `;

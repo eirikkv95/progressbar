@@ -53,15 +53,17 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  border: 0.5px solid #5e6387;
+  border: none;
   padding: 1.6rem;
   border-radius: 1rem;
   color: #fafafa;
   min-width: 86%;
   margin-right: auto;
-  background: rgb(250, 250, 250, 20%);
+  background: rgb(0, 0, 0, 30%);
   filter: blur(40);
-  box-shadow: 0 2rem 4rem rgb(0, 0, 0, 35%);
+
+  box-shadow: 0px 20px 40px rgba(33, 62, 124, 0.35),
+    0px 20px 40px rgba(33, 62, 124, 0.25);
 `;
 const Button = styled.button`
   cursor: pointer;
@@ -70,9 +72,9 @@ const Button = styled.button`
   border-radius: 1rem;
   margin-left: 1.2rem;
   background: #1d2123;
-  border: 0.5px solid #5e6387;
   border-radius: 1rem;
-  background: rgb(250, 250, 250, 20%);
+  background: rgb(0, 0, 0, 30%);
   filter: blur(40);
-  box-shadow: 0 2rem 4rem rgb(0, 0, 0, 35%);
+  box-shadow: 0px 20px 40px rgba(33, 62, 124, 0.35),
+    0px 20px 40px rgba(33, 62, 124, 0.25);
 `;

@@ -1,9 +1,8 @@
 import React, { useState, useContext } from 'react';
-import { CircularProgressbar } from 'react-circular-progressbar';
 import { Progress } from 'react-sweet-progress';
-import 'react-sweet-progress/lib/style.css';
 import { ValueContext } from '../../context/valueContext';
 import styled from 'styled-components';
+import 'react-sweet-progress/lib/style.css';
 
 const ProgressBar = () => {
   const appContext = useContext(ValueContext);
@@ -13,9 +12,10 @@ const ProgressBar = () => {
 
   const array = todos.filter((todo) => todo.completed === true);
   const percentage = Math.floor((array.length / tasks) * 100);
+  const zero = 0;
 
   return (
-    <div className="progress">
+    <ProgressWrap>
       <ProgressInfo>
         <First>
           <H2>Tasks</H2>
@@ -30,8 +30,8 @@ const ProgressBar = () => {
       </ProgressInfo>
       <Progress
         type="circle"
-        percent={percentage}
-        width={450}
+        percent={todos.length ? percentage : zero}
+        width={350}
         theme={{
           active: {
             trailColor: '#303240',
@@ -48,22 +48,19 @@ const ProgressBar = () => {
           },
         }}
       />
-
-      {/* <CircularProgressbar
-        value={array.length}
-        maxValue={tasks}
-        text={`${percentage}%`}
-        background={false}
-        backgroundPadding={3}
-      /> */}
-    </div>
+    </ProgressWrap>
   );
 };
 
 export default ProgressBar;
 
+const ProgressWrap = styled.div`
+  display: grid;
+  justify-content: center;
+`;
+
 const H2 = styled.h2`
-  font-size: 4.4rem;
+  font-size: 3.4rem;
 `;
 
 const Desc = styled.p`
@@ -82,3 +79,7 @@ const First = styled.div`
 const Last = styled.div`
   justify-self: center;
 `;
+
+// react-sweet-progress-circle
+
+// box-shadow: 0px 20px 40px #673ab785, 0px 20px 40px #1e1d2178;
