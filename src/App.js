@@ -1,29 +1,25 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import './base/main.scss';
+
 import styled from 'styled-components';
-import TodoForm from './components/Todos/TodoForm';
-import TodoList from './components/Todos/TodoList';
-import ProgressBar from './components/Progress/Progress';
-
-import { ValueContext } from './context/valueContext';
 import Navbar from './components/Navigation/Navigation';
-
+import TaskBoard from './Pages/TaskBoard';
+import TodoProsess from './Pages/TodoProsess';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 export default function App() {
-  const valueInfo = useContext(ValueContext);
-  const { addTodo } = valueInfo;
-
   return (
     <MainWrapper>
-      <Navbar />
-      <Main>
-        <Note>
-          <TodoForm addTodo={addTodo} />
-          <TodoList />
-        </Note>
-        <Progress>
-          <ProgressBar />
-        </Progress>
-      </Main>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <TodoProsess />
+          </Route>
+          <Route path="/taskBoard">
+            <TaskBoard />
+          </Route>
+        </Switch>
+      </Router>
     </MainWrapper>
   );
 }
@@ -33,19 +29,4 @@ const MainWrapper = styled.div`
   min-height: 100vh;
   background:  linear-gradient(47.03deg, #76E7E7 -3.73%, #6B16DB 93.84%);
   );
-`;
-const Main = styled.main`
-  max-width: 1234px;
-  padding: 0 2rem;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-`;
-
-const Note = styled.section`
-  position: relative;
-`;
-const Progress = styled.section`
-  height: 500px;
 `;

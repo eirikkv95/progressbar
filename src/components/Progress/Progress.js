@@ -79,7 +79,3 @@ const First = styled.div`
 const Last = styled.div`
   justify-self: center;
 `;
-
-// react-sweet-progress-circle
-
-// box-shadow: 0px 20px 40px #673ab785, 0px 20px 40px #1e1d2178;

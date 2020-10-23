@@ -2,26 +2,27 @@ import React from 'react';
 import styled from 'styled-components';
 import todo from '../Image/todo.svg';
 import lists from '../Image/tasks.svg';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
     <Nav>
       <Ul>
         <List>
-          <Link href="#">
+          <LinkStyle to="/">
             <LinkButton>
               <Image src={todo} alt="A list icon" />
               <Paragraph>Todo</Paragraph>
             </LinkButton>
-          </Link>
+          </LinkStyle>
         </List>
         <List>
-          <Link href="#">
+          <LinkStyle to="/taskBoard">
             <LinkButton>
               <Image src={lists} alt="A list icon" />
               <Paragraph> Task Board</Paragraph>
             </LinkButton>
-          </Link>
+          </LinkStyle>
         </List>
       </Ul>
     </Nav>
@@ -47,6 +48,9 @@ const Ul = styled.ul`
 `;
 
 const List = styled.li``;
+const LinkStyle = styled(Link)`
+  text-decoration: none;
+`;
 
 const LinkButton = styled.button`
   display: flex;
@@ -70,9 +74,7 @@ const LinkButton = styled.button`
       rgba(255, 255, 255, 0.4) 0px 0px 0px 0.5px inset;
   }
 `;
-const Link = styled.a`
-  text-decoration: none;
-`;
+
 const Image = styled.img`
   width: 2rem;
   height: 2rem;
