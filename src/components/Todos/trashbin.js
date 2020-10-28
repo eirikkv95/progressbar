@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const TrashBin = ({ todo, removeTodo }) => {
+  // ! Use Styled Components
   const cursor = {
     cursor: 'pointer',
     fill: 'white',
@@ -90,3 +91,5 @@ const TrashButton = styled.button`
   background: none;
   border: none;
 `;
+
+// const Path = styled.path``

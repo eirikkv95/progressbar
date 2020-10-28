@@ -60,7 +60,7 @@ const Input = styled.input`
   min-width: 86%;
   margin-right: auto;
   background: rgb(0, 0, 0, 30%);
-  filter: blur(40);
+  backdrop-filter: blur(250px);
 
   box-shadow: 0px 20px 40px rgba(33, 62, 124, 0.35),
     0px 20px 40px rgba(33, 62, 124, 0.25);
@@ -74,7 +74,8 @@ const Button = styled.button`
   background: #1d2123;
   border-radius: 1rem;
   background: rgb(0, 0, 0, 30%);
-  filter: blur(40);
+  backdrop-filter: blur(250px);
+
   box-shadow: 0px 20px 40px rgba(33, 62, 124, 0.35),
     0px 20px 40px rgba(33, 62, 124, 0.25);
 `;

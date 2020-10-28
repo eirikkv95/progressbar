@@ -18,11 +18,11 @@ const ProgressBar = () => {
     <ProgressWrap>
       <ProgressInfo>
         <First>
-          <H2>Tasks</H2>
+          <Heading>Tasks</Heading>
           <Desc>{tasks}</Desc>
         </First>
         <Last>
-          <H2>Completed</H2>
+          <Heading>Completed</Heading>
           <Desc>
             {array.length} / {tasks}
           </Desc>
@@ -59,7 +59,7 @@ const ProgressWrap = styled.div`
   justify-content: center;
 `;
 
-const H2 = styled.h2`
+const Heading = styled.h2`
   font-size: 3.4rem;
 `;
 

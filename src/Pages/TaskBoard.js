@@ -1,10 +1,11 @@
 import React from 'react';
+import TaskBoardConteiner from '../components/TaskBoard/taskBoardContainer';
 
 const TaskBoard = () => {
   return (
-    <div className="nice">
-      <h2>Even better</h2>
-    </div>
+    <>
+      <TaskBoardConteiner />
+    </>
   );
 };
 

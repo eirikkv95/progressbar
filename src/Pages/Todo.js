@@ -31,6 +31,8 @@ const Main = styled.main`
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
+  position: relative;
+  z-index: 10;
 `;
 
 const Note = styled.section`

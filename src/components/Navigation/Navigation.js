@@ -47,7 +47,11 @@ const Ul = styled.ul`
   gap: 2.6rem;
 `;
 
-const List = styled.li``;
+const List = styled.li`
+  &:not(last-child) {
+    margin-right: 1.2rem;
+  }
+`;
 const LinkStyle = styled(Link)`
   text-decoration: none;
 `;

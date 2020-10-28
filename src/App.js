@@ -4,8 +4,10 @@ import './base/main.scss';
 import styled from 'styled-components';
 import Navbar from './components/Navigation/Navigation';
 import TaskBoard from './Pages/TaskBoard';
-import TodoProsess from './Pages/TodoProsess';
+import TodoProsess from './Pages/Todo';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import LineWave from './components/Image/lineWaves.svg';
+
 export default function App() {
   return (
     <MainWrapper>
@@ -20,6 +22,7 @@ export default function App() {
           </Route>
         </Switch>
       </Router>
+      <Image src={LineWave} alt="lines that form a wave" />
     </MainWrapper>
   );
 }
@@ -29,4 +32,11 @@ const MainWrapper = styled.div`
   min-height: 100vh;
   background:  linear-gradient(47.03deg, #76E7E7 -3.73%, #6B16DB 93.84%);
   );
+`;
+
+const Image = styled.img`
+  width: 100%;
+  position: absolute;
+  bottom: 2%;
+  z-index: 0;
 `;
