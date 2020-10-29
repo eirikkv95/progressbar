@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import todo from '../Image/todo.svg';
 import lists from '../Image/tasks.svg';
+import ProgressBar from '../Progress/Progress';
 import { Link } from 'react-router-dom';
 
 const Navbar = () => {
@@ -25,31 +26,45 @@ const Navbar = () => {
           </LinkStyle>
         </List>
       </Ul>
+      <ProgressBar />
     </Nav>
   );
 };
 
 export default Navbar;
+const HeadingTwo = styled.h2`
+  position: fixed;
+`;
 
 const Nav = styled.nav`
   display: flex;
   align-items: center;
   padding: 0 2rem;
   height: 10rem;
-  max-width: 1234px;
-  margin: 0 auto;
-  margin-bottom: 1rem;
+  width: 100%;
+  position: absolute;
+  z-index: 11;
 `;
 
 const Ul = styled.ul`
   display: flex;
   list-style: none;
   gap: 2.6rem;
+  max-width: 1234px;
+  margin-left: 2rem;
+  margin-right: auto;
+  @media (max-width: 980px) {
+    margin-left: 6rem;
+  }
+
+  @media (max-width: 660px) {
+    margin-left: 0rem;
+  }
 `;
 
 const List = styled.li`
   &:not(last-child) {
-    margin-right: 1.2rem;
+    margin-right: 4.2rem;
   }
 `;
 const LinkStyle = styled(Link)`
@@ -63,20 +78,9 @@ const LinkButton = styled.button`
   text-decoration: none;
   color: #fafafa;
   background: none;
-  padding: 12px 2.4rem;
-  border-radius: 1.4rem;
-  transition: 0.3s ease-in;
   border: none;
   cursor: pointer;
   background-blend-mode: overlay;
-
-  &:hover {
-    background: rgba(250, 250, 250, 0.2);
-    filter: blur(40);
-    box-shadow: rgba(31, 47, 71, 0.25) 0px 20px 40px,
-      rgba(0, 0, 0, 0.1) 0px 1px 5px,
-      rgba(255, 255, 255, 0.4) 0px 0px 0px 0.5px inset;
-  }
 `;
 
 const Image = styled.img`
