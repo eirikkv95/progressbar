@@ -1,4 +1,5 @@
 import React from 'react';
+import { useEffect } from 'react';
 import './base/main.scss';
 
 import styled from 'styled-components';
@@ -36,7 +37,10 @@ const MainWrapper = styled.div`
 
 const Image = styled.img`
   width: 100%;
-  position: absolute;
+  position: fixed;
   bottom: 2%;
   z-index: 0;
+  @@media (min-width: 980px) {
+    display: none;
+  }
 `;
