@@ -16,22 +16,11 @@ const ProgressBar = () => {
 
   return (
     <ProgressWrap>
-      <ProgressInfo>
-        <First>
-          <Heading>Tasks</Heading>
-          <Desc>{tasks}</Desc>
-        </First>
-        <Last>
-          <Heading>Completed</Heading>
-          <Desc>
-            {array.length} / {tasks}
-          </Desc>
-        </Last>
-      </ProgressInfo>
       <Progress
         type="circle"
         percent={todos.length ? percentage : zero}
-        width={350}
+        width={70}
+        strokeWidth={10}
         theme={{
           active: {
             trailColor: '#303240',
@@ -57,25 +46,4 @@ export default ProgressBar;
 const ProgressWrap = styled.div`
   display: grid;
   justify-content: center;
-`;
-
-const Heading = styled.h2`
-  font-size: 3.4rem;
-`;
-
-const Desc = styled.p`
-  font-size: 2.4rem;
-  text-align: center;
-`;
-
-const ProgressInfo = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-`;
-const First = styled.div`
-  justify-self: center;
-`;
-const Last = styled.div`
-  justify-self: center;
 `;
