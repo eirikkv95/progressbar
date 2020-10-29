@@ -55,11 +55,10 @@ const CheckBox = styled.button`
 `;
 
 const TodoNotes = styled.div`
-  font-size: 2rem;
   margin-right: auto;
 `;
 
 const P = styled.p`
   margin-right: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 `;

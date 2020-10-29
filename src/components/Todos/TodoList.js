@@ -31,17 +31,20 @@ const TodoWrapper = styled.div`
   height: min-content;
   padding: 2rem 3.6rem;
   border-radius: 2.2rem;
-
+  margin: 4rem 0rem;
   background: rgb(0, 0, 0, 30%);
   backdrop-filter: blur(250px);
   box-shadow: 0px 20px 40px rgba(33, 62, 124, 0.35),
     0px 20px 40px rgba(33, 62, 124, 0.25);
+
+  @media (max-width: 980px) {
+    margin: 4rem 6rem;
+  }
+  @media (max-width: 660px) {
+    margin: 4rem 0rem;
+  }
 `;
 
 const EmptyIllustration = styled.div`
   margin-top: 4rem;
-`;
-
-const Img = styled.img`
-  width: 100%;
 `;

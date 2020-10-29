@@ -15,9 +15,6 @@ const TodoProsess = () => {
         <TodoForm addTodo={addTodo} />
         <TodoList />
       </Note>
-      <ProgressSection>
-        <Progress />
-      </ProgressSection>
     </Main>
   );
 };
@@ -25,19 +22,17 @@ const TodoProsess = () => {
 export default TodoProsess;
 
 const Main = styled.main`
-  max-width: 1234px;
-  padding: 0 2rem;
+  max-width: 73.4rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 4rem;
   position: relative;
   z-index: 10;
+  padding-top: 13rem;
 `;
 
 const Note = styled.section`
   position: relative;
-`;
-const ProgressSection = styled.section`
-  height: 500px;
+  padding: 0 2rem;
 `;

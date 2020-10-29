@@ -30,7 +30,7 @@ const TodoForm = ({ addTodo }) => {
     }
   };
   return (
-    <div>
+    <Space>
       <Form onSubmit={handleSubmit}>
         <Input
           name="task"
@@ -42,17 +42,27 @@ const TodoForm = ({ addTodo }) => {
           <Add />
         </Button>
       </Form>
-    </div>
+    </Space>
   );
 };
 
 export default TodoForm;
+
+const Space = styled.div`
+  @media (max-width: 980px) {
+    margin: 0 6rem;
+  }
+  @media (max-width: 660px) {
+    margin: 0;
+  }
+`;
 
 const Form = styled.form`
   display: flex;
 `;
 
 const Input = styled.input`
+  font-size: 1.6rem;
   border: none;
   padding: 1.6rem;
   border-radius: 1rem;
