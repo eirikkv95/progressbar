@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import styled from 'styled-components';
 import TodoForm from '../components/Todos/TodoForm';
 import TodoList from '../components/Todos/TodoList';
-import Progress from '../components/Progress/Progress';
 
 import { ValueContext } from '../context/valueContext';
 

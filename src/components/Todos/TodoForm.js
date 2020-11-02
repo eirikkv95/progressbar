@@ -37,6 +37,7 @@ const TodoForm = ({ addTodo }) => {
           type="text"
           value={todoForm.task}
           onChange={handleTaskInputChange}
+          placeholder="What are your goals today?"
         />
         <Button>
           <Add />
@@ -71,9 +72,11 @@ const Input = styled.input`
   margin-right: auto;
   background: rgb(0, 0, 0, 30%);
   backdrop-filter: blur(250px);
-
   box-shadow: 0px 20px 40px rgba(33, 62, 124, 0.35),
     0px 20px 40px rgba(33, 62, 124, 0.25);
+  @media (max-width: 660px) {
+    width: 100%;
+  }
 `;
 const Button = styled.button`
   cursor: pointer;
@@ -85,7 +88,10 @@ const Button = styled.button`
   border-radius: 1rem;
   background: rgb(0, 0, 0, 30%);
   backdrop-filter: blur(250px);
-
   box-shadow: 0px 20px 40px rgba(33, 62, 124, 0.35),
     0px 20px 40px rgba(33, 62, 124, 0.25);
+
+  @media (max-width: 660px) {
+    display: none;
+  }
 `;
