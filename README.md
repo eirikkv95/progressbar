@@ -1,2 +1,8 @@
-# progressbar
-A progressbar where the user can see in percentages how much work has been done
+# Todo 
+- Get your task for the day defined.
+- Complete all tasks and feel satisfied.
+
+# Task Board
+- Coming soon...
+
+
