@@ -6,6 +6,11 @@ import TrashBin from './trashbin';
 const Todo = ({ todo, toggleComplete, removeTodo, handleRemoveClick }) => {
   function handleCheck() {
     toggleComplete(todo.id);
+    Vibrate(300);
+  }
+
+  function Vibrate(ms) {
+    navigator.vibrate(ms);
   }
 
   return (
