@@ -4,13 +4,22 @@ import styled from 'styled-components';
 import TrashBin from './trashbin';
 
 const Todo = ({ todo, toggleComplete, removeTodo, handleRemoveClick }) => {
+  navigator.vibrate =
+    navigator.vibrate ||
+    navigator.webkitVibrate ||
+    navigator.mozVibrate ||
+    navigator.msVibrate;
+
   function handleCheck() {
     toggleComplete(todo.id);
-    Vibrate(300);
+    if (navigator.vibrate) {
+      Vibrate(300);
+    }
   }
 
   function Vibrate(ms) {
     navigator.vibrate(ms);
+    console.log(ms);
   }
 
   return (
@@ -48,6 +57,9 @@ const TodoWrapper = styled.div`
   &:last-child {
     border-bottom: none;
   }
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+  }
 `;
 
 const CheckBox = styled.button`
@@ -57,6 +69,12 @@ const CheckBox = styled.button`
   border: 1px solid #5c607c;
   border-radius: 33px;
   cursor: pointer;
+
+  @media (max-width: 480px) {
+    margin-right: 1.4rem;
+    min-width: 1.8rem;
+    min-height: 1.8rem;
+  }
 `;
 
 const TodoNotes = styled.div`
@@ -66,4 +84,8 @@ const TodoNotes = styled.div`
 const P = styled.p`
   margin-right: 1rem;
   font-size: 1.6rem;
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
 `;

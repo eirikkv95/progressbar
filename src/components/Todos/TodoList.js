@@ -42,6 +42,10 @@ const TodoWrapper = styled.div`
   }
   @media (max-width: 660px) {
     margin: 4rem 0rem;
+    padding: 1.7rem 1.6rem;
+  }
+  @media (max-width: 480px) {
+    margin: 2rem 0rem;
   }
 `;
 

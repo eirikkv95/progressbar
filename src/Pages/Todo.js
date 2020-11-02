@@ -28,7 +28,7 @@ const Main = styled.main`
   gap: 4rem;
   position: relative;
   z-index: 10;
-  padding-top: 13rem;
+  padding-top: 12rem;
 `;
 
 const Note = styled.section`
