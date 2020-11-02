@@ -1,5 +1,4 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import './base/main.scss';
 
 import styled from 'styled-components';
@@ -10,10 +9,20 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LineWave from './components/Image/lineWaves.svg';
 
 export default function App() {
+  const [top, setTop] = useState(true);
+
+  useEffect(() => {
+    document.addEventListener('scroll', () => {
+      const isTop = window.scrollY < 90;
+      if (isTop !== top) {
+        setTop(!top);
+      }
+    });
+  });
   return (
     <MainWrapper>
       <Router>
-        <Navbar />
+        <Navbar top={top} />
         <Switch>
           <Route exact path="/">
             <TodoProsess />

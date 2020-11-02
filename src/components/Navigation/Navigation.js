@@ -1,13 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import todo from '../Image/todo.svg';
 import lists from '../Image/tasks.svg';
 import ProgressBar from '../Progress/Progress';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = (props) => {
+  let progressBarSize = 70;
+  if (!props.top) {
+    progressBarSize = 50;
+  }
+
   return (
-    <Nav>
+    <Nav top={props.top}>
       <Ul>
         <List>
           <LinkStyle to="/">
@@ -26,24 +31,23 @@ const Navbar = () => {
           </LinkStyle>
         </List>
       </Ul>
-      <ProgressBar />
+      <ProgressBar size={progressBarSize} top={props.top} />
     </Nav>
   );
 };
 
 export default Navbar;
-const HeadingTwo = styled.h2`
-  position: fixed;
-`;
 
 const Nav = styled.nav`
   display: flex;
   align-items: center;
   padding: 0 2rem;
-  height: 10rem;
+  height: ${(props) => (props.top ? '10rem' : '7rem')};
   width: 100%;
-  position: absolute;
-  z-index: 11;
+  position: ${(props) => (props.top ? 'absolute' : 'fixed')};
+  background: ${(props) => (props.top ? 'none' : 'rgba(0,0,0,35%)')};
+  backdrop-filter: ${(props) => (props.top ? 'none' : 'blur(250px)')};
+  z-index: 9999;
 `;
 
 const Ul = styled.ul`
@@ -66,6 +70,12 @@ const List = styled.li`
   &:not(last-child) {
     margin-right: 4.2rem;
   }
+
+  @media (max-width: 660px) {
+    &:not(last-child) {
+      margin-right: 1.2rem;
+    }
+  }
 `;
 const LinkStyle = styled(Link)`
   text-decoration: none;
@@ -81,6 +91,9 @@ const LinkButton = styled.button`
   border: none;
   cursor: pointer;
   background-blend-mode: overlay;
+  @media (max-width: 660px) {
+    font-size: 1.2rem;
+  }
 `;
 
 const Image = styled.img`
