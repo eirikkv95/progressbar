@@ -84,8 +84,4 @@ const TodoNotes = styled.div`
 const P = styled.p`
   margin-right: 1rem;
   font-size: 1.6rem;
-
-  @media (max-width: 480px) {
-    font-size: 1.2rem;
-  }
 `;

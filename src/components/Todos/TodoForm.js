@@ -79,7 +79,6 @@ const Input = styled.input`
   }
 
   @media (max-width: 480px) {
-    font-size: 1.3rem;
     padding: 1.2rem 1.6rem;
   }
 `;
