@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import { Progress } from 'react-sweet-progress';
 import { ValueContext } from '../../context/valueContext';
 import styled from 'styled-components';
 import 'react-sweet-progress/lib/style.css';
 
-const ProgressBar = () => {
+const ProgressBar = (props) => {
   const appContext = useContext(ValueContext);
 
   const { todos } = appContext;
@@ -19,7 +19,7 @@ const ProgressBar = () => {
       <Progress
         type="circle"
         percent={todos.length ? percentage : zero}
-        width={70}
+        width={props.size}
         strokeWidth={10}
         theme={{
           active: {
