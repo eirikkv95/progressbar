@@ -37,6 +37,7 @@ const ValueProvider = (props) => {
   const removeTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
+
   return (
     <ValueContext.Provider
       value={{

@@ -19,7 +19,6 @@ const Todo = ({ todo, toggleComplete, removeTodo, handleRemoveClick }) => {
 
   function Vibrate(ms) {
     navigator.vibrate(ms);
-    console.log(ms);
   }
 
   return (
@@ -33,7 +32,7 @@ const Todo = ({ todo, toggleComplete, removeTodo, handleRemoveClick }) => {
           border: todo.completed ? 'none' : '1px solid #AEB3D7',
         }}
       ></CheckBox>
-      <TodoNotes>
+      <TodoNotes onClick={handleCheck}>
         <P>{todo.task}</P>
       </TodoNotes>
       <TrashBin
@@ -58,7 +57,7 @@ const TodoWrapper = styled.div`
     border-bottom: none;
   }
   @media (max-width: 480px) {
-    padding: 0.5rem;
+    padding: 1rem;
   }
 `;
 
