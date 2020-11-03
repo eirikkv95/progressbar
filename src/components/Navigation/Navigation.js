@@ -6,9 +6,9 @@ import ProgressBar from '../Progress/Progress';
 import { Link } from 'react-router-dom';
 
 const Navbar = (props) => {
-  let progressBarSize = 50;
+  let progressBarSize = 55;
   if (!props.top) {
-    progressBarSize = 40;
+    progressBarSize = 50;
   }
 
   return (
