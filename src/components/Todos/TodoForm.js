@@ -10,7 +10,7 @@ const TodoForm = ({ addTodo }) => {
     completed: false,
     time: '',
   });
-  let inputRef = useRef();
+  let inputRef = useRef(null);
 
   const handleTaskInputChange = (e) => {
     setTodoForm({
