@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styled from 'styled-components';
 import Add from './add';
@@ -10,9 +10,13 @@ const TodoForm = ({ addTodo }) => {
     completed: false,
     time: '',
   });
+  let inputRef = useRef();
 
   const handleTaskInputChange = (e) => {
-    setTodoForm({ ...todoForm, task: e.target.value });
+    setTodoForm({
+      ...todoForm,
+      task: e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1),
+    });
   };
 
   const handleSubmit = (e) => {
@@ -24,15 +28,18 @@ const TodoForm = ({ addTodo }) => {
       let year = dateObj.getFullYear();
 
       let newDate = `${day} / ${month} / ${year}`;
+      // const value = capitalizeFirstLetter(todoForm.task);
       addTodo({ ...todoForm, id: uuidv4(), time: newDate });
       // reset task input
       setTodoForm({ ...todoForm, task: '' });
+      inputRef.current.focus();
     }
   };
   return (
     <Space>
       <Form onSubmit={handleSubmit}>
         <Input
+          ref={inputRef}
           name="task"
           type="text"
           value={todoForm.task}
