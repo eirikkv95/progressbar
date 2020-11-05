@@ -1,7 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react';
 
 const ValueContext = createContext();
-const LOCAL_STORAGE_KEY = 'react-todo-list-todos';
+const LOCAL_STORAGE_KEY = 'Todo-list';
 
 const ValueProvider = (props) => {
   const [todos, setTodos] = useState([]);
