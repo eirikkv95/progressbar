@@ -83,4 +83,5 @@ const TodoNotes = styled.div`
 const P = styled.p`
   margin-right: 1rem;
   font-size: 1.6rem;
+  cursor: pointer;
 `;
