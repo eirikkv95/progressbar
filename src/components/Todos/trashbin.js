@@ -18,6 +18,7 @@ export default TrashBin;
 const TrashButton = styled.button`
   background: none;
   border: none;
+  cursor: pointer;
 `;
 
 // const Path = styled.path``

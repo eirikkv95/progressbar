@@ -40,7 +40,7 @@ export default function App() {
 const MainWrapper = styled.div`
   position: relative;
   min-height: 100vh;
-  background:  linear-gradient(47.03deg, #76E7E7 -3.73%, #6B16DB 93.84%);
+  background:  var(--colors-linear);
   );
 `;
 

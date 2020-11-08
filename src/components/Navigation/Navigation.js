@@ -4,6 +4,7 @@ import todo from '../Image/todo.svg';
 import lists from '../Image/tasks.svg';
 import ProgressBar from '../Progress/Progress';
 import { Link } from 'react-router-dom';
+import ThemeToggler from './ThemeToggler';
 
 const Navbar = (props) => {
   let progressBarSize = 55;
@@ -31,6 +32,7 @@ const Navbar = (props) => {
           </LinkStyle>
         </List>
       </Ul>
+      <ThemeToggler />
       <ProgressBar size={progressBarSize} top={props.top} />
     </Nav>
   );
