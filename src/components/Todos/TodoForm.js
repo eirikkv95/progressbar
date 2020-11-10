@@ -5,7 +5,7 @@ import Add from './add';
 
 const TodoForm = ({ addTodo }) => {
   const [todoForm, setTodoForm] = useState({
-    id: '',
+    id: null,
     task: '',
     completed: false,
     time: '',
@@ -22,14 +22,7 @@ const TodoForm = ({ addTodo }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (todoForm.task.trim()) {
-      let dateObj = new Date();
-      let day = dateObj.getDate();
-      let month = dateObj.getMonth();
-      let year = dateObj.getFullYear();
-
-      let newDate = `${day} / ${month} / ${year}`;
-      // const value = capitalizeFirstLetter(todoForm.task);
-      addTodo({ ...todoForm, id: uuidv4(), time: newDate });
+      addTodo({ ...todoForm, id: uuidv4() });
       // reset task input
       setTodoForm({ ...todoForm, task: '' });
       inputRef.current.focus();
@@ -46,7 +39,7 @@ const TodoForm = ({ addTodo }) => {
           onChange={handleTaskInputChange}
           placeholder="What are your goals today?"
         />
-        <Button>
+        <Button type="submit">
           <Add />
         </Button>
       </Form>
