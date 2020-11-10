@@ -1,25 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
 import styled from 'styled-components';
 import Sun from '../Image/sun.svg';
 import Moon from '../Image/moon.svg';
+import useLocalStorageState from '../useHooks/localStorageHook';
 
 const ThemeToggler = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useLocalStorageState('Theme-storage');
   const nextTheme = theme === 'light' ? 'dark' : 'light';
-  const THEME_STORAGE = 'Theme-storage';
-
-  useEffect(() => {
-    const storageTheme = localStorage.getItem(THEME_STORAGE);
-    console.log(storageTheme);
-    if (storageTheme) {
-      setTheme(storageTheme);
-    }
-  }, []);
-
-  useEffect(() => {
-    localStorage.setItem(THEME_STORAGE, theme);
-    document.body.dataset.theme = theme;
-  }, [theme]);
 
   return (
     <Button onClick={() => setTheme(nextTheme)}>

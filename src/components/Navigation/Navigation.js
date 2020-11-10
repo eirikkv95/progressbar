@@ -43,6 +43,7 @@ export default Navbar;
 const Nav = styled.nav`
   display: flex;
   align-items: center;
+  transition: all 0.25s linear;
   padding: 0 2rem;
   height: ${(props) => (props.top ? '10rem' : '7rem')};
   width: 100%;
