@@ -11,14 +11,12 @@ const ProgressBar = (props) => {
   const tasks = todos.length;
 
   const array = todos.filter((todo) => todo.completed === true);
-  const percentage = Math.floor((array.length / tasks) * 100);
-  const zero = 0;
 
   return (
     <ProgressWrap>
       <Progress
         type="circle"
-        percent={todos.length ? percentage : zero}
+        percent={todos.length ? Math.floor((array.length / tasks) * 100) : 0}
         width={props.size}
         strokeWidth={10}
         theme={{
