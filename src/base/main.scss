@@ -18,9 +18,11 @@ body {
 
 body[data-theme='light'] {
   --colors-linear: linear-gradient(47.03deg, #76e7e7 -3.73%, #6b16db 93.84%);
+  --border: 1px solid #f1f1f150;
 }
 body[data-theme='dark'] {
   --colors-linear: linear-gradient(47.03deg, #24264f -3.73%, #0e3c94 93.84%);
+  --border: 1px solid #aeb3d7;
 }
 
 ::placeholder {

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import '../../base/main.scss';
 
 import TrashBin from './trashbin';
 
@@ -45,11 +46,11 @@ const CheckBox = styled.button`
     props.completed
       ? 'linear-gradient(199.95deg, #DE6379 13.32%, rgba(248, 215, 45, 0.94) 98.56%)'
       : 'none'};
-  border: ${(props) => (props.completed ? 'none' : '1px solid #AEB3D7')};
+
   margin-right: 2.4rem;
   min-width: 2.8rem;
   min-height: 2.8rem;
-  border: 1px solid #5c607c;
+  border: var(--border);
   border-radius: 33px;
   cursor: pointer;
 
