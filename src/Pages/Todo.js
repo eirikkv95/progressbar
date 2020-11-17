@@ -3,10 +3,10 @@ import styled from 'styled-components';
 import TodoForm from '../components/Todos/TodoForm';
 import TodoList from '../components/Todos/TodoList';
 
-import { ValueContext } from '../context/valueContext';
+import { TodoContext } from '../context/todoContext';
 
 const TodoProsess = () => {
-  const valueInfo = useContext(ValueContext);
+  const valueInfo = useContext(TodoContext);
   const { addTodo } = valueInfo;
   return (
     <Main>

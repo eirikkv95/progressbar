@@ -1,11 +1,11 @@
 import React, { useContext } from 'react';
 import { Progress } from 'react-sweet-progress';
-import { ValueContext } from '../../context/valueContext';
+import { TodoContext } from '../../context/todoContext';
 import styled from 'styled-components';
 import 'react-sweet-progress/lib/style.css';
 
 const ProgressBar = (props) => {
-  const appContext = useContext(ValueContext);
+  const appContext = useContext(TodoContext);
 
   const { todos } = appContext;
   const tasks = todos.length;

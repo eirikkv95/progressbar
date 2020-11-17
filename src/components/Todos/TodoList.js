@@ -1,13 +1,14 @@
 import React, { useContext } from 'react';
 
 import Todo from './Todos';
-import { ValueContext } from '../../context/valueContext';
+import { TodoContext } from '../../context/todoContext';
 import styled from 'styled-components';
 // import Note from '../Placeholders/note'
 
 const TodoList = () => {
-  const appProvider = useContext(ValueContext);
+  const appProvider = useContext(TodoContext);
   const { todos, toggleComplete, removeTodo } = appProvider;
+
   return todos.length ? (
     <TodoWrapper>
       {todos.map((todo) => (

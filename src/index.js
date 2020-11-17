@@ -2,14 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import App from './App';
-import { ValueProvider } from './context/valueContext';
+import { TodoProvider } from './context/todoContext';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ValueProvider>
+    <TodoProvider>
       <App />
-    </ValueProvider>
+    </TodoProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

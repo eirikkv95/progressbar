@@ -4,35 +4,14 @@ import styled from 'styled-components';
 import TrashBin from './trashbin';
 
 const Todo = ({ todo, toggleComplete, removeTodo, handleRemoveClick }) => {
-  navigator.vibrate =
-    navigator.vibrate ||
-    navigator.webkitVibrate ||
-    navigator.mozVibrate ||
-    navigator.msVibrate;
-
   function handleCheck() {
     toggleComplete(todo.id);
-    if (navigator.vibrate) {
-      Vibrate(300);
-    }
-  }
-
-  function Vibrate(ms) {
-    navigator.vibrate(ms);
   }
 
   return (
     <TodoWrapper>
-      <CheckBox
-        onClick={handleCheck}
-        style={{
-          background: todo.completed
-            ? 'linear-gradient(199.95deg, #DE6379 13.32%, rgba(248, 215, 45, 0.94) 98.56%)'
-            : 'none',
-          border: todo.completed ? 'none' : '1px solid #AEB3D7',
-        }}
-      ></CheckBox>
-      <TodoNotes onClick={handleCheck}>
+      <CheckBox onClick={handleCheck} completed={todo.completed}></CheckBox>
+      <TodoNotes>
         <P>{todo.task}</P>
       </TodoNotes>
       <TrashBin
@@ -62,6 +41,11 @@ const TodoWrapper = styled.div`
 `;
 
 const CheckBox = styled.button`
+  background: ${(props) =>
+    props.completed
+      ? 'linear-gradient(199.95deg, #DE6379 13.32%, rgba(248, 215, 45, 0.94) 98.56%)'
+      : 'none'};
+  border: ${(props) => (props.completed ? 'none' : '1px solid #AEB3D7')};
   margin-right: 2.4rem;
   min-width: 2.8rem;
   min-height: 2.8rem;

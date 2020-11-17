@@ -1,9 +1,9 @@
 import React, { useState, useEffect, createContext } from 'react';
 
-const ValueContext = createContext();
+const TodoContext = createContext();
 const LOCAL_STORAGE_KEY = 'Todo-list';
 
-const ValueProvider = (props) => {
+const TodoProvider = (props) => {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
@@ -18,38 +18,41 @@ const ValueProvider = (props) => {
   }, [todos]);
 
   const addTodo = (todo) => {
-    setTodos([...todos, todo]);
+    setTodos([todo, ...todos]);
   };
 
-  const toggleComplete = (id) => {
-    setTodos(
-      todos.map((todo) => {
-        if (todo.id === id) {
-          return {
-            ...todo,
-            completed: !todo.completed,
-          };
-        }
-        return todo;
-      })
-    );
-  };
   const removeTodo = (id) => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
+  const toggleComplete = (id) => {
+    setTodos((todos) =>
+      todos
+        .map((todo) => {
+          if (todo.id === id) {
+            return {
+              ...todo,
+              completed: !todo.completed,
+            };
+          }
+          return todo;
+        })
+        .sort((a, b) => a.completed - b.completed)
+    );
+  };
 
   return (
-    <ValueContext.Provider
+    <TodoContext.Provider
       value={{
         todos,
+        setTodos,
         addTodo,
         toggleComplete,
         removeTodo,
       }}
     >
       {props.children}
-    </ValueContext.Provider>
+    </TodoContext.Provider>
   );
 };
 
-export { ValueProvider, ValueContext };
+export { TodoProvider, TodoContext };
