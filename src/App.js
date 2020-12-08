@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './base/main.scss';
-
 import styled from 'styled-components';
 import Navbar from './components/Navigation/Navigation';
-import TaskBoard from './Pages/TaskBoard';
 import TodoProsess from './Pages/Todo';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import LineWave from './components/Image/lineWaves.svg';
 
 export default function App() {
@@ -21,17 +18,8 @@ export default function App() {
   });
   return (
     <MainWrapper>
-      <Router>
-        <Navbar top={top} />
-        <Switch>
-          <Route exact path="/">
-            <TodoProsess />
-          </Route>
-          <Route path="/taskBoard">
-            <TaskBoard />
-          </Route>
-        </Switch>
-      </Router>
+      <Navbar top={top} />
+      <TodoProsess />
       <Image src={LineWave} alt="lines that form a wave" />
     </MainWrapper>
   );
